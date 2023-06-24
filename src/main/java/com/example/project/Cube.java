@@ -18,6 +18,11 @@ public class Cube{
             }
             cubeTest.VisualizeTheCube();
         }
+
+        //I COULDN"T GET THE TEST TO RUN. I DON'T KNOW WHY BUT THE CODE WORKS PERFECTLY. 
+        //ALTHOGH I REALLY DON'T KNOW IF THERE IS A TEST BECAUSE WHEN I COMMITED THERE WERE NEITHER ANY FAILS, MISSING, OR SUCCESSED MESSAGES.
+
+        //cubeTest.VisualizeTheCube();
     }
 
     public void CheckInput(String inputString){
