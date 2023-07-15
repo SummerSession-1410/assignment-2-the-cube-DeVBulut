@@ -1,5 +1,7 @@
 package com.example.project;
 
+import java.util.Random;
+
 public class Cube{
 
     char[][] redSide    = new char[3][3];
@@ -12,10 +14,14 @@ public class Cube{
     public static void main(final String[] args) {
         Cube cubeTest = new Cube();
         cubeTest.SetToDefault();
+
         if(args.length > 0){
             for(int i = 0; i < args.length; i++){
                 cubeTest.CheckInput(args[i]);
             }
+            cubeTest.VisualizeTheCube();
+        }else {
+            cubeTest.RandomizeCube(10);
             cubeTest.VisualizeTheCube();
         }
 
@@ -23,6 +29,17 @@ public class Cube{
         //ALTHOGH I REALLY DON'T KNOW IF THERE IS A TEST BECAUSE WHEN I COMMITED THERE WERE NEITHER ANY FAILS, MISSING, OR SUCCESSED MESSAGES.
 
         //cubeTest.VisualizeTheCube();
+    }
+
+     public void RandomizeCube(int numMoves) {
+        Random random = new Random();
+        String[] moves = { "u", "u'", "d", "d'", "r", "r'", "l", "l'", "f", "f'", "b", "b'" };
+
+        for (int i = 0; i < numMoves; i++) {
+            int randomIndex = random.nextInt(moves.length);
+            String randomMove = moves[randomIndex];
+            CheckInput(randomMove);
+        }
     }
 
     public void CheckInput(String inputString){
